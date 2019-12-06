@@ -1,0 +1,355 @@
+NPM comands
+npm publish
+npm version patch, major, minor
+npm publish
+Skip to content
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+
+@Andersonfrfilho
+1
+00Andersonfrfilho/ModeloReactNativeRedux2019
+ Code Issues 0 Pull requests 0 Projects 0 Wiki Security Insights Settings
+ModeloReactNativeRedux2019/leiame
+@Andersonfrfilho Andersonfrfilho update desing view
+681988c now
+310 lines (263 sloc)  8 KB
+
+//Documentação
+Preducks
+//Prototipos
+Axure // InVision
+  Cores
+    https://pigment.shapefactory.co/
+    Adobe Color
+    https://dribbble.com/search/learning%20english
+    https://www.behance.net/galleries/aero
+  Resolução
+    1000 largura x 1100 altura pixels
+  UILab - Cursos
+
+#===============Utilizando Docker
+#1º-Botao direito do mouse generate editor config
+  1-1_configurações
+    root = true
+
+    [*]
+    end_of_line = lf
+    indent_style = space
+    indent_size = 2
+    charset = utf-8
+    trim_trailing_whitespace = true
+    insert_final_newline = true
+#2º-apagar o eslintrc.js
+#3º-eslint --init
+? How would you like to use ESLint? To check syntax, find problems, and enforce code style
+? What type of modules does your project use? JavaScript modules (import/export)
+? Which framework does your project use? React
+? Does your project use TypeScript? No
+? Where does your code run?
+? How would you like to define a style for your project? Use a popular style guide
+? Which style guide do you want to follow? Airbnb (https://github.com/airbnb/javascript)
+? What format do you want your config file to be in? JavaScript
+#4ºapagar o packge.lock.json
+#5ºyarn
+#6ºyarn add prettier eslint-config-prettier eslint-plugin-prettier babel-eslint -D
+#7º editar o .eslintrc
+
+module.exports = {
+  env: {
+    es6: true,
+  },
+  extends: ['airbnb', 'prettier', 'prettier/react'],
+  globals: {
+    Atomics: 'readonly',
+    SharedArrayBuffer: 'readonly',
+  },
+  parser: 'babel-eslint',
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
+    ecmaVersion: 2018,
+    sourceType: 'module',
+  },
+  plugins: ['react', 'prettier'],
+  rules: {
+    'prettier/prettier': 'error',
+    'react/jsx-filename-extension': [
+      'warn',
+      {
+        extensions: ['.jsx', '.js'],
+      },
+    ],
+    'import/prefer-default-export': 'off',
+  },
+};
+
+8ª configurar prettier
+module.exports = {
+  bracketSpacing: false,
+  jsxBracketSameLine: true,
+  singleQuote: true,
+  trailingComma: 'es5',
+};
+
+9ª abra o Genymotion
+adb connect IP_EMULADO:5555
+adb reverse tcp:3333 tcp:3333
+json-server server.json -p 3333 -w
+
+
+extenções para o visual code
+Color Highlight (para aparecer as cores html)
+sergii naumov
+DotEnv (manipula variaveis de ambiente no backend da aplicação)
+mikestead
+Dracula Official (Thema Opcional)
+Dracula Theme
+EditorConfig fo VsCode (padroniza o estilo de codificação)
+EditorConfig
+//Estes são apenas uma vez
+Eslint (força o padrao do estil de codificação)
+Dirk Baeumer
+Git History (MOstra o historico dos commit's)
+Don Jayamanne
+GitLens - Git supercharged(Mostra os usuarios e as edições)
+EricAmodio
+GraphQl - (GraphQl facilidades para se trabalhar com o GraphQl)
+Prisma
+Import Cost - mostra o peso das importações
+Wix
+Live Server - (sobe paginas html simples)
+Ritwick dey
+Live Share - compartilha projetos e até terminais
+Microsoft
+Material Icon Theme (coloca icones nos arquivos)
+Philipp Kief
+vscode-styled-components (Deixa os styles do javascript como o css)
+Julien Poissonnier
+
+
+
+Base de processos para criação de projetos no REACT-NATIVE (diferende do REACT)
+1- caso nao tenha react-native cli
+	npm install -g react-native-cli
+			ou
+	yarn global add react-native-cli
+2- iniciando o projeto
+	react-native run-android
+//configurando o ambient com editor config
+3- na pasta do ambiente gere o projeto
+//Configurações opcionais para padrão de projeto
+3- instalando e configurando o esLint
+	yarn add eslint -D
+4- inicializando o esLint
+	4.1 caso esteja utilizando npm
+		npx eslint --init
+	4.2 caso esteja utilzando o yarn
+		yarn run eslint --init
+		4.2.1 How would you like to use ESlint
+			To check syntax, find problems, and enforce code style
+		4.2.1 what type of modules does your project use?
+			Javascript modules
+		4.2.1 which framework does your project use ?
+			react
+		4.2.1 where does your code run?
+			espaco para disabilitar(no react-native)
+		4.2.1 How would you like to configure
+			Use a popular style guide
+		4.2.2 Which style guide do you want to follow?
+			4.2.2.1 caso seje nodeJS
+				Standard
+			4.2.2.2 caso seje react
+				Airbnb
+		4.2.4 what format do you want your config file to be in?(formato utilizado para guardar as configurações do eslint)
+			JSON
+		4.2.3 Do you use React?
+			yes
+
+		4.2.5 woul you like to install them now with npm
+			yes
+	4.3 Instalar o babel eslint
+		yarn add babel-eslint -D
+
+5- inicializando o reactotron
+	5.1 Digite o comando
+		yarn add reactotron-react-native -D
+			ou
+		npm i --save-dev reactotron-react-native
+	5.2 crie um arquivo src/config/ReactotronConfig.js
+		import Reactotron from 'reactotron-react-native'
+
+		Reactotron
+  			.configure() // controls connection & communication settings
+  			.useReactNative() // add all built-in react native plugins
+  			.connect() // let's connect!
+
+//########################################################
+1º Lista de emuladores
+    emulator -list-avds
+#Mostrar os ativos
+		adb devices
+
+1º Inicie o emulador
+    emulator -no-snapshot -avd Pixel_3_API_28_86
+
+
+2º inicie o projeto
+	react-native start --reset-cache
+	react-native run-ios ou run-android --simulator 'nomedoEmulador'
+    react-native init `nomedo projeto`
+    react-native run-android
+http://localhost:8081/debugger-ui/
+    problema de 97%
+    adb kill-server
+    adb start-server
+
+Problemas com Font-Icons
+android/app/build.gradle
+apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
+
+
+link fonts no projeto
+adicione o que deseja ser lincado no arquivo json
+rode o comando react-native link
+
+//Extenções
+Import Cost => mostra memoria utilizada em cada importação
+
+1* git add .
+2* git remote add origin 'link do git'
+3* git commit -m "comentario"
+4* git push
+
+Inicio de um projeto
+para ele criar o git controlar a pasta.
+git init
+
+para ele acrescentar arquivos
+git add 'nome do arquivo'
+
+configurar usuario Usuario global
+git config --global user.email "Andersonfrfilho@gmail.com"
+usuario só apra o projeto
+git config user.email "Andersonfrfilho@gmail.com"
+
+configurar nome do usuario global
+git config --global user.name "Andersonfrfilho"
+usuario só para o projeto
+git config user.name "Andersonfrfilho"
+
+Todo Projeto
+
+para ele criar o git controlar a pasta.
+git init
+
+para ele acrescentar arquivos
+git add 'nome do arquivo' ou git add . para todos
+
+git commit -m "Comentarios"
+
+Criando Copia com branch
+git branch mostra lista de branch
+git branch "nome sem aspas" ai cria uma branch
+
+para usalo git checkout "nome da branch sem aspas"
+
+git branch -v mostra qual o ultimo commit que foi realizado
+
+unificar arquivos da branch com o master
+1º va até onde vc quer mandar as mudanças
+git checkout master
+
+git merge "nome da branch que quer implementar"
+
+deletando branch
+git branch -d "Nome da branch"
+
+
+Clonar repositorio
+git clone "Link do arquivo"
+
+git remote -v
+mostra os repositorios
+
+Resumindo para subir o git
+git add .
+git commit -m "Comentario"
+git push -v "repositorio" origin "branch" master
+
+atualizar localmente
+git pull ele vai baixar e mesclar de forma automatica
+git remote -v para aparecer a lista
+
+git fetch origin "repositorio" "branch" master
+//atualizando repositorio
+git merge origin/master
+git pull "apartir de onde" "para onde"
+git pull origin master
+
+// realizando copia clicando em fork
+
+//Atualizando Fork
+git remote add upstream https://github.com/raphaelfabeni/raphaelfabeni.github.io.git
+git fetch upstream
+git merge upstream/master master
+git push origin master
+
+/* Endereços para cada emulador/simulador:
+ ** Genymotion:              http://10.0.3.2:3333/
+ ** Emulador Android Studio: http://10.0.2.2:3333/
+ ** Simulador IOS:           http://localhost:3333/
+ */
+//$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$Configurações Visual
+{
+    "workbench.colorTheme": "Dracula",
+    "editor.fontFamily": "Fira Code",
+    "window.zoomLevel": 0,
+    "editor.fontLigatures": true,
+    "editor.fontSize": 16,
+    "editor.lineHeight": 24,
+    "workbench.iconTheme": "vscode-icons",
+    "editor.formatOnSave": true,
+    "editor.rulers": [
+      80,
+      120
+    ],
+    "editor.tabSize": 2,
+    "editor.renderLineHighlight": "gutter",
+    "terminal.integrated.fontSize": 14,
+    "emmet.syntaxProfiles": {
+      "javascript": "jsx"
+    },
+    "emmet.includeLanguages": {
+      "javascript": "javascriptreact"
+    },
+    "breadcrumbs.enabled": true,
+    "editor.parameterHints.enabled": false,
+    "prettier.eslintIntegration": true,
+    "eslint.autoFixOnSave": true,
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.enablePreviewFromQuickOpen": false
+  }
+  
+  #######################################################################################
+utilizando o Realm Studio no Android
+1-apos importalo
+    const realm = yield getRealm();
+    console.tron.log(realm.path);
+2-executar o comando
+  adb pull /data/data/com.knowhow/files/default.realm
+3-abrir o realmStudio
+  e abrir o arquivo
+4-excluir schema
+  adb shell rm /data/data/com.knowhow/files/default.realm
+
+//API FAKE
+módulo
+npm install -g json-server 
+
+json-server db.json
