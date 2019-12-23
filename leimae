@@ -355,3 +355,14 @@ npm install -g json-server
 json-server db.json
 create-react-native-module getnet-hardware --package-identifier com.andersonfrfilho.getnethardwarecommunicationmodule --platforms android
 gradlew assembleRelease
+
+…or create a new repository on the command line
+echo "# testando" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/Andersonfrfilho/testando.git
+git push -u origin master
+…or push an existing repository from the command line
+git remote add origin https://github.com/Andersonfrfilho/testando.git
+git push -u origin master
