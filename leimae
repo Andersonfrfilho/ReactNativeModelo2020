@@ -353,3 +353,5 @@ módulo
 npm install -g json-server 
 
 json-server db.json
+create-react-native-module getnet-hardware --package-identifier com.andersonfrfilho.getnethardwarecommunicationmodule --platforms android
+gradlew assembleRelease
