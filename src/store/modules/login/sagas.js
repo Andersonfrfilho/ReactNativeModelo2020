@@ -8,6 +8,7 @@ import {
   commonSuccessAction,
   commonFailureAction,
 } from '../common/actions';
+import {UserException, errorVerify} from '../../../procedure/exceptions';
 import {addToLoginSuccess} from './actions';
 import {navigate} from '../../../services/navigation';
 
@@ -23,27 +24,8 @@ function* addToLogin({payload}) {
     navigate('Menu');
   } catch (error) {
     // erro de typagem no código
-    if (error instanceof TypeError) {
-      yield put(
-        commonFailureAction(
-          `erro de typagem de código linha:${error.line}, coluna:${error.column}`
-        )
-      );
-    } else if (error instanceof RangeError) {
-      yield put(
-        commonFailureAction(
-          `erro no tipo de variavel de código linha:${error.line}, coluna:${error.column}`
-        )
-      );
-    } else if (error.message === 'Request failed with status code 404') {
-      yield put(commonFailureAction(`Erro na API verifique a chamada`));
-    } else if (error.message === 'Network Error') {
-      yield put(commonFailureAction(`Erro de conexao verifique sua Internet`));
-    } else {
-      console.tron.log('proximo erro');
-      console.tron.log(error);
-      yield put(commonFailureAction(`Proximo Erro`));
-    }
+    const message = errorVerify(error);
+    yield put(commonFailureAction(message));
   } finally {
     console.tron.log('finalizou');
   }
