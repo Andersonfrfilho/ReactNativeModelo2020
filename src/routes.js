@@ -11,7 +11,7 @@ const Stack = createStackNavigator();
 export default function Routes() {
   return (
     <Stack.Navigator
-      initialRouteName="Menu"
+      initialRouteName="Login"
       screenOptions={{}}
       mode="modal"
       headerMode="none">
