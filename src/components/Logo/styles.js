@@ -1,9 +1,6 @@
 import styled from 'styled-components/native';
-import {Platform, Dimensions} from 'react-native';
 import PropTypes from 'prop-types';
-import {fontSize} from '../../config/Functions';
-
-const {height, width} = Dimensions.get('window');
+import {metrics, colors} from '../../styles';
 
 export const Container = styled.View`
   flex: 1;
@@ -20,13 +17,13 @@ export const Image = styled.Image`
 `;
 export const Message = styled.Text`
   flex: 1;
-  font-size: ${fontSize(width)};
+  font-size: ${metrics.fontSize()};
 
-  color: ${props => (props.error ? '#e45' : props.color)};
+  color: ${props => (props.error ? colors.danger : props.color)};
 `;
 Message.propTypes = {
   color: PropTypes.string,
 };
 Message.defaultProps = {
-  color: '#f7f7f7',
+  color: colors.white,
 };

@@ -1,9 +1,10 @@
 import styled from 'styled-components/native';
+import {colors} from '../../styles';
 
 export const Container = styled.View`
-  border-width: 3;
-  border-color: #f4f4f4;
-  background: #f4f4f4;
+  border-width: 3px;
+  border-color: ${() => colors.white};
+  background: ${() => colors.white};
   border-radius: 12px;
   height: 50px;
   margin: 20px;

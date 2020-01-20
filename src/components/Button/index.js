@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Container, Button, Text, Loading} from './styles';
+import {colors} from '../../styles';
 
 export default function Logo({
   title,
@@ -35,6 +36,6 @@ Logo.defaultProps = {
   functionOnPress: () => {},
   loading: false,
   loadingSize: 'small',
-  loadingColor: '#f7f7f7',
+  loadingColor: colors.light,
   disabled: true,
 };

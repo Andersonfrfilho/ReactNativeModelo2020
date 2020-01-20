@@ -335,7 +335,7 @@ git push origin master
     "workbench.editor.enablePreview": false,
     "workbench.editor.enablePreviewFromQuickOpen": false
   }
-  
+
   #######################################################################################
 utilizando o Realm Studio no Android
 1-apos importalo
@@ -350,7 +350,7 @@ utilizando o Realm Studio no Android
 
 //API FAKE
 módulo
-npm install -g json-server 
+npm install -g json-server
 
 json-server db.json
 create-react-native-module getnet-hardware --package-identifier com.andersonfrfilho.getnethardwarecommunicationmodule --platforms android
@@ -366,3 +366,5 @@ git push -u origin master
 …or push an existing repository from the command line
 git remote add origin https://github.com/Andersonfrfilho/testando.git
 git push -u origin master
+
+cd android && gradlew clean && cd .. && react-native run-android

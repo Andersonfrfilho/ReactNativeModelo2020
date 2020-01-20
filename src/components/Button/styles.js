@@ -1,8 +1,6 @@
 import styled from 'styled-components/native';
-import {Platform, Dimensions} from 'react-native';
 import PropTypes from 'prop-types';
-import {fontSize} from '../../config/Functions';
-const {width, height} = Dimensions.get('window');
+import {colors, metrics} from '../../styles';
 
 export const Container = styled.View`
   flex: 1;
@@ -11,14 +9,14 @@ export const Container = styled.View`
 `;
 export const Button = styled.TouchableOpacity`
   flex: 1;
-  background: #45678f;
+  background: ${() => colors.primary};
   justify-content: center;
   align-items: center;
 `;
 export const Text = styled.Text`
-  color: #f7f7f7;
+  color: ${() => colors.white};
   font-weight: bold;
-  font-size: ${fontSize(width)};
+  font-size: ${metrics.fontSize()};
 `;
 export const Loading = styled.ActivityIndicator.attrs(props => {
   return {
@@ -32,5 +30,5 @@ Loading.propTypes = {
 };
 Loading.defaultProps = {
   size: 'small',
-  color: '#f7f7f7',
+  color: colors.white,
 };

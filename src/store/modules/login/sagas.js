@@ -2,17 +2,16 @@
 // select busca informações sobre o estado
 import {call, select, spawn, put, all, takeLatest} from 'redux-saga/effects';
 import AsyncStorage from '@react-native-community/async-storage';
+import {CommonActions, NavigationContext} from '@react-navigation/native';
+import {navigate} from '../../../services/navigation';
 import api from '../../../services/api';
 import {
   commonLoadingActivity,
   commonSuccessAction,
   commonFailureAction,
 } from '../common/actions';
-import {UserException, errorVerify} from '../../../procedure/exceptions';
+import {Exceptions} from '../../../procedures';
 import {addToLoginSuccess} from './actions';
-import {navigate} from '../../../services/navigation';
-
-import {startWatchingNetworkConnectivity} from '../offline';
 
 function* addToLogin({payload}) {
   yield put(commonLoadingActivity('carregando...'));
@@ -21,17 +20,13 @@ function* addToLogin({payload}) {
     const {data} = yield call(api.get, `/users/${username}`);
     yield call(AsyncStorage.setItem, '@AppName:user', data.login);
     yield put(commonSuccessAction(''));
-    navigate('Menu');
   } catch (error) {
     // erro de typagem no código
-    const message = errorVerify(error);
+    const message = Exceptions.errorVerify(error);
     yield put(commonFailureAction(message));
   } finally {
-    console.tron.log('finalizou');
+    navigate('Menu');
   }
 }
 
-export default all([
-  spawn(startWatchingNetworkConnectivity),
-  takeLatest('@login/ADD_REQUEST', addToLogin),
-]);
+export default all([takeLatest('@login/ADD_REQUEST', addToLogin)]);

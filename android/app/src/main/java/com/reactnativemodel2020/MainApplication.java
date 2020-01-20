@@ -1,4 +1,4 @@
-package com.reactnativemodelo2020;
+package com.reactnativemodel2020;
 
 import android.app.Application;
 import android.content.Context;

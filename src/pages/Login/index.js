@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
+import {useNavigation, useLinking} from '@react-navigation/native';
 import {Container} from './styles';
 import * as LoginActions from '../../store/modules/login/actions';
 import Header from '../../components/Header';
@@ -13,8 +14,10 @@ export default function Login() {
   useEffect(() => {}, []);
   const dispatch = useDispatch();
   function handleLogin() {
-    dispatch(LoginActions.Creators.addToLoginRequest(stateUsername));
+    dispatch(LoginActions.addToLoginRequest(stateUsername));
   }
+
+  const navigation = useNavigation();
   return (
     <Container>
       <Header />
@@ -32,6 +35,7 @@ export default function Login() {
           functionOnPress={() => {
             handleLogin();
           }}
+          // functionOnPress={() => navigation.navigate('Menu')}
           loading={loading}
           disabled={!stateUsername || loading}
         />
