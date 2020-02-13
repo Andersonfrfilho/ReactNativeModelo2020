@@ -1,4 +1,4 @@
-import {CommonActions} from '@react-navigation/native';
+import {CommonActions, StackActions} from '@react-navigation/native';
 
 let navigator;
 
@@ -12,4 +12,7 @@ export function navigate(name) {
       name,
     })
   );
+}
+export function replace(name) {
+  navigator.dispatch(StackActions.replace(name));
 }

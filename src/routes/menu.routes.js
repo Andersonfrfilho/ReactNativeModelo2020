@@ -8,13 +8,13 @@ function WildCard({title = 'lol'}) {
   return <Text>{title}</Text>;
 }
 
-export function MenuRoutes() {
+export default function MenuRoutes() {
   return (
     <Tab.Navigator>
-      <Tab.Screen name="Repositories" component={() => <WildCard />} />
-      <Tab.Screen name="Repositories" component={() => <WildCard />} />
-      <Tab.Screen name="Repositories" component={() => <WildCard />} />
-      <Tab.Screen name="Repositories" component={() => <WildCard />} />
+      <Tab.Screen name="Repositories1" component={() => <WildCard />} />
+      <Tab.Screen name="Repositories2" component={() => <WildCard />} />
+      <Tab.Screen name="Repositories3" component={() => <WildCard />} />
+      <Tab.Screen name="Repositories4" component={() => <WildCard />} />
     </Tab.Navigator>
   );
 }
