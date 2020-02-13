@@ -368,3 +368,4 @@ git remote add origin https://github.com/Andersonfrfilho/testando.git
 git push -u origin master
 
 cd android && gradlew clean && cd .. && react-native run-android
+cd android;./gradlew clean;cd ..;react-native run-android
